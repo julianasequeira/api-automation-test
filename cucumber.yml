@@ -1,0 +1,5 @@
+---
+default: -p report -p env_sw_prd
+
+report: --format pretty --format html --out=log/report.html
+env_sw_prd: ENV_RUN="env_sw"
