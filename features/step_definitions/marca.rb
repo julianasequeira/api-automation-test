@@ -1,6 +1,6 @@
 Dado("que eu faça uma requisição do tipo GET para o endpoint {string} para listar as marcas") do |endpoint|
-  @raiaDrogadil_api = RaiaDrogadil_api.new
-  @response = @raiaDrogadil_api.get_endpoint(endpoint)
+  @raiaDrogadil = RaiaDrogadil.new
+  @response = @raiaDrogadil.get_endpoint(endpoint)
   puts @response.to_s.force_encoding("UTF-8")
 end
 
@@ -17,7 +17,7 @@ end
 
 Dado("que eu faça uma requisição do tipo GET para o endpoint para listar os modelos") do 
   endpoint = "/carros/marcas/#{@marca_codigo}/modelos"
-  @response = @raiaDrogadil_api.get_endpoint(endpoint)
+  @response = @raiaDrogadil.get_endpoint(endpoint)
   puts @response.to_s.force_encoding("UTF-8")
 end
 
@@ -31,7 +31,7 @@ end
 
 Dado("que eu faça uma requisição do tipo GET para o endpoint para listar os anos") do 
   endpoint = "/carros/marcas/#{@marca_codigo}/modelos/#{@modelo_codigo}/anos"
-  @response = @raiaDrogadil_api.get_endpoint(endpoint)
+  @response = @raiaDrogadil.get_endpoint(endpoint)
   puts @response.to_s.force_encoding("UTF-8")
 end
 
@@ -44,7 +44,7 @@ end
 
 Quando("faço uma requisição do tipo GET para o endpoint do veiculo") do 
   endpoint = "/carros/marcas/#{@marca_codigo}/modelos/#{@modelo_codigo}/anos/#{@ano_codigo}"
-  @response = @raiaDrogadil_api.get_endpoint(endpoint)
+  @response = @raiaDrogadil.get_endpoint(endpoint)
   puts @response.to_s.force_encoding("UTF-8")
 end
 

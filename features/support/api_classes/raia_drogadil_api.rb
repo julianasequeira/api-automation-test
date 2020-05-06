@@ -1,4 +1,4 @@
-class RaiaDrogadil_api
+class RaiaDrogadil
   include HTTParty
   base_uri $base_uri
   
