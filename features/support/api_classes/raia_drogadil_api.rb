@@ -2,8 +2,8 @@ class RaiaDrogadil
   include HTTParty
   base_uri $base_uri
   
-  def get_endpoint(endpoint) 
-    self.class.get(endpoint)
+  def get_url(url) 
+    self.class.get(url)
   end
 
 end

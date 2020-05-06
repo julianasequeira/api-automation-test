@@ -1,6 +1,6 @@
-Dado("que eu faça uma requisição do tipo GET para o endpoint {string} para listar as marcas") do |endpoint|
+Dado("que eu faça uma requisição do tipo GET para a url {string} para listar as marcas") do |url|
   @raiaDrogadil = RaiaDrogadil.new
-  @response = @raiaDrogadil.get_endpoint(endpoint)
+  @response = @raiaDrogadil.get_url(url)
   puts @response.to_s.force_encoding("UTF-8")
 end
 
@@ -11,13 +11,13 @@ E("localizo o código da marca {string}") do |marca|
   puts "código da marca #{@marca_codigo}"
 end
 
-Então("o status code deve ser {int}") do |status_code|
-  expect(@response.code).to eq status_code
+Então("o status code deve ser {int}") do |codigo_de_status|
+  expect(@response.code).to eq codigo_de_status
 end
 
-Dado("que eu faça uma requisição do tipo GET para o endpoint para listar os modelos") do 
-  endpoint = "/carros/marcas/#{@marca_codigo}/modelos"
-  @response = @raiaDrogadil.get_endpoint(endpoint)
+Dado("que eu faça uma requisição do tipo GET para a url para listar os modelos") do 
+  url = "/carros/marcas/#{@marca_codigo}/modelos"
+  @response = @raiaDrogadil.get_url(url)
   puts @response.to_s.force_encoding("UTF-8")
 end
 
@@ -29,9 +29,9 @@ E("localizo o código do modelo {string}") do |modelo|
   puts "código do modelo #{@modelo_codigo}"
 end
 
-Dado("que eu faça uma requisição do tipo GET para o endpoint para listar os anos") do 
-  endpoint = "/carros/marcas/#{@marca_codigo}/modelos/#{@modelo_codigo}/anos"
-  @response = @raiaDrogadil.get_endpoint(endpoint)
+Dado("que eu faça uma requisição do tipo GET para a url para listar os anos") do 
+  url = "/carros/marcas/#{@marca_codigo}/modelos/#{@modelo_codigo}/anos"
+  @response = @raiaDrogadil.get_url(url)
   puts @response.to_s.force_encoding("UTF-8")
 end
 
@@ -42,9 +42,9 @@ E("localizo o código do ano {string}") do |ano|
   puts "código da ano #{@ano_codigo}"
 end
 
-Quando("faço uma requisição do tipo GET para o endpoint do veiculo") do 
-  endpoint = "/carros/marcas/#{@marca_codigo}/modelos/#{@modelo_codigo}/anos/#{@ano_codigo}"
-  @response = @raiaDrogadil.get_endpoint(endpoint)
+Quando("faço uma requisição do tipo GET para a url do veiculo") do 
+  url = "/carros/marcas/#{@marca_codigo}/modelos/#{@modelo_codigo}/anos/#{@ano_codigo}"
+  @response = @raiaDrogadil.get_url(url)
   puts @response.to_s.force_encoding("UTF-8")
 end
 
