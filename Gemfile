@@ -1,8 +1,8 @@
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
-gem "cucumber"
-gem "httparty"
-gem "faker"
-gem "rspec"
-gem "factory_bot"
-gem "pry"
+gem 'cucumber'
+gem 'factory_bot'
+gem 'faker'
+gem 'httparty'
+gem 'pry'
+gem 'rspec'
