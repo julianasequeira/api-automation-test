@@ -1,7 +1,7 @@
 #language: pt
 
 @listar_veiculos
-Funcionalidade: Obter informacoes de veiculo especifico
+Funcionalidade: Obter informações de veículo específico
 
 @listar_marca
 Cenário: Listar marcas disponíveis
@@ -28,4 +28,4 @@ Cenário: Listar anos do modelo e marca escolhido
 Cenário: Listar anos do modelo e marca escolhido
   Dado que eu faça uma requisição do tipo GET para a url "/carros/marcas" para listar os anos de marca "GM - Chevrolet" e modelo "CRUZE LTZ 1.8 16V FlexPower 4p Aut." e ano "2016 "
   Então o status code deve ser 200
-  E retornar as informações do veiculo
+  E retornar as informações do veículo
