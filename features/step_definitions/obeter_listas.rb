@@ -62,10 +62,10 @@ Dado('que eu faça uma requisição do tipo GET para a url {string} para listar 
   step "localizo o código do ano '#{ano}'"
   url_informacoes = "/carros/marcas/#{@marca_codigo}/modelos/#{@modelo_codigo}/anos/#{@ano_codigo}"
   @response = @raia_drogadil.get_url(url_informacoes)
-  puts @response.to_s.force_encoding("UTF-8")
+  puts @response.to_s.force_encoding('UTF-8')
 end
 
-E('retornar as informações do veiculo') do
+E('retornar as informações do veículo') do
   expect(@response['Marca']).to eql(@marca_nome)
   expect(@response['Modelo']).to eql(@modelo_nome)
   expect(@response['AnoModelo']).to eql(@ano_nome)

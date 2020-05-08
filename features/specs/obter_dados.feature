@@ -4,7 +4,7 @@
 Funcionalidade: Obter informações de veículo específico
 
 @listar_marca
-Cenário: Listar marcas disponíveis
+Cenário: Listar marcas disponiveis
   Dado que eu faça uma requisição do tipo GET para a url "/carros/marcas" para listar as marcas
   E localizo o código da marca "GM - Chevrolet"
   Então o status code deve ser 200
